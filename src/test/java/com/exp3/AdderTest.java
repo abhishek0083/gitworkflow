@@ -3,7 +3,7 @@ package com.exp3;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
-public class AdderTest {
+public class AdderTest{
 
     @Test
     public void testAddition() {
