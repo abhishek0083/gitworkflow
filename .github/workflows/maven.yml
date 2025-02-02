@@ -1,0 +1,26 @@
+name: Java CI with Maven - Full Lifecycle
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Build Maven Project - Execute All Lifecycle Phases
+        run: |
+          echo "Starting Maven build process..."
+          echo "Executing: mvn clean validate compile test package verify install site deploy"
+          mvn clean validate compile test package verify install site deploy --file pom.xml -B
