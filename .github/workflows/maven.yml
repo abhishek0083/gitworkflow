@@ -23,4 +23,4 @@ jobs:
         run: |
           echo "Starting Maven build process..."
           echo "Executing: mvn clean validate compile test package verify install site deploy"
-          mvn clean validate compile package verify install site deploy --file pom.xml -B
+          mvn clean validate compile package verify install site --file pom.xml -B
